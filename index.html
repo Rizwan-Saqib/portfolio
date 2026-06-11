@@ -6,490 +6,321 @@
     <title>Muhammad Rizwan Saqib | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        darkBg: '#0b0f19',
-                        cardBg: '#111827',
-                        accentCyan: '#22d3ee',
-                        accentBlue: '#3b82f6',
+                        baseBg: '#050a14',    /* Deep Dark Space Blue */
+                        cardBg: '#0a101e',    /* Lighter Navy for Cards */
+                        accentCyan: '#06b6d4',/* Neon Cyan Glow */
+                        accentBlue: '#2563eb',
+                        accentPurple: '#a855f7',
+                        accentGreen: '#10b981',
+                        textWhite: '#f8fafc',
+                        textGray: '#94a3b8',
                     }
                 }
             }
         }
     </script>
     <style>
-        .glass {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .hexagon-frame {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
         }
     </style>
 </head>
-<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-darkBg">
+<body class="bg-baseBg text-textWhite font-sans selection:bg-cyan-500/30 selection:text-white overflow-x-hidden">
 
-    <nav class="fixed top-0 left-0 w-full z-40 glass border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-accentCyan to-accentBlue">
-                RIZWAN.DEV
+    <nav class="fixed top-0 left-0 w-full z-50 bg-baseBg/80 backdrop-blur-md border-b border-slate-900/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider text-white flex items-center gap-2 group">
+                <div class="w-2.5 h-6 bg-accentCyan rounded shadow-[0_0_10px_#06b6d4] group-hover:scale-y-110 transition-transform"></div> 
+                rizwan<span class="text-accentCyan">.dev</span>
             </a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-accentCyan transition-colors">About</a>
-                <a href="#skills" class="hover:text-accentCyan transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-accentCyan transition-colors">Projects</a>
-                <a href="#experience" class="hover:text-accentCyan transition-colors">Hackathons</a>
-                <a href="#leadership" class="hover:text-accentCyan transition-colors">Leadership</a>
-                <a href="#contact" class="hover:text-accentCyan transition-colors">Contact</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-textGray">
+                <a href="#about" class="hover:text-accentCyan transition-colors duration-200">About</a>
+                <a href="#skills" class="hover:text-accentCyan transition-colors duration-200">Skills</a>
+                <a href="#projects" class="hover:text-accentCyan transition-colors duration-200">Projects</a>
+                <a href="#certificates" class="hover:text-accentCyan transition-colors duration-200">Certificates</a>
+                <a href="#services" class="hover:text-accentCyan transition-colors duration-200">Services</a>
+                <a href="#contact" class="hover:text-accentCyan transition-colors duration-200">Contact</a>
             </div>
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-slate-300 hover:text-accentCyan focus:outline-none">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden glass border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
-            <a href="#about" class="block text-slate-300 hover:text-accentCyan py-2">About</a>
-            <a href="#skills" class="block text-slate-300 hover:text-accentCyan py-2">Skills</a>
-            <a href="#projects" class="block text-slate-300 hover:text-accentCyan py-2">Projects</a>
-            <a href="#experience" class="block text-slate-300 hover:text-accentCyan py-2">Hackathons</a>
-            <a href="#leadership" class="block text-slate-300 hover:text-accentCyan py-2">Leadership</a>
-            <a href="#contact" class="block text-slate-300 hover:text-accentCyan py-2">Contact</a>
+            <button class="w-9 h-9 rounded-xl border border-slate-800 flex items-center justify-center text-accentCyan hover:border-accentCyan/40 transition-all shadow-sm">
+                <i class="fa-solid fa-moon"></i>
+            </button>
         </div>
     </nav>
 
-    <section class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-        <div class="inline-flex items-center space-x-2 bg-slate-900 border border-slate-700 rounded-full px-4 py-1.5 text-xs font-medium text-cyan-400 mb-6 shadow-sm">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>NTHP Scholar @ IBA Sukkur</span>
-        </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
-            Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentCyan to-accentBlue">Muhammad Rizwan Saqib</span>
-        </h1>
-        <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mb-8">
-            Computer Systems Engineering Student specializing in robust software development, OOP architectures, and embedded electronics.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-accentCyan to-accentBlue text-darkBg font-semibold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-cyan-500/20">
-                View My Work
-            </a>
-            <a href="#contact" class="px-6 py-3 bg-slate-900 border border-slate-700 font-semibold rounded-lg hover:bg-slate-800 transition-all">
-                Let's Connect
-            </a>
-        </div>
-        <div class="flex space-x-6 mt-8 text-xl text-slate-400">
-            <a href="https://github.com/Rizwan-Saqib" target="_blank" class="hover:text-accentCyan transition-colors"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/rizwan-saqib-b723a8370" target="_blank" class="hover:text-accentCyan transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:rizwansaqib461@gmail.com" class="hover:text-accentCyan transition-colors"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-    </section>
-
-    <hr class="border-slate-900 max-w-6xl mx-auto">
-
-    <section id="about" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-3 gap-12 items-center">
-            <div class="md:col-span-1 flex justify-center">
+    <section id="about" class="pt-36 pb-24 md:pt-48 md:pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold tracking-wide text-accentCyan">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accentCyan animate-pulse"></span> Welcome to my Engineering Space
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-white leading-none">
+                    Muhammad Rizwan Saqib
+                </h1>
+                <div class="text-2xl md:text-3xl font-semibold tracking-tight text-accentCyan min-h-[40px]">
+                    <span id="typing-element"></span>
+                </div>
+                <p class="text-textGray max-w-2xl text-base md:text-lg leading-relaxed font-light">
+                    Computer Systems Engineering student at <span class="text-white font-medium">IBA Sukkur</span> and proud <span class="text-white font-medium">NTHP Scholar</span>. Focused heavily on designing robust backend architectures, compiling optimization paths, and structuring safe algorithmic loops.
+                </p>
+                <div class="flex space-x-4 pt-2">
+                    <a href="https://github.com/Rizwan-Saqib" target="_blank" class="w-11 h-11 rounded-full border border-slate-800 bg-cardBg flex items-center justify-center text-textGray hover:text-accentCyan hover:border-accentCyan shadow-sm transition-all duration-300">
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rizwan-saqib-b723a8370" target="_blank" class="w-11 h-11 rounded-full border border-slate-800 bg-cardBg flex items-center justify-center text-textGray hover:text-accentCyan hover:border-accentCyan shadow-sm transition-all duration-300">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="px-8 py-3.5 bg-gradient-to-r from-accentCyan to-accentBlue text-white font-bold rounded-xl hover:opacity-95 transition-all shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 transform hover:-translate-y-0.5">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="px-8 py-3.5 border border-slate-800 bg-cardBg/50 text-white font-semibold rounded-xl hover:bg-cardBg hover:border-accentCyan/30 transition-all transform hover:-translate-y-0.5">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="md:col-span-5 flex justify-center md:justify-end">
                 <div class="relative group">
-                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accentCyan to-accentBlue opacity-30 blur group-hover:opacity-50 transition duration-300"></div>
-                    <div class="relative w-48 h-48 bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700 text-6xl text-cyan-400">
-                        <i class="fa-solid fa-code-laptop"></i>
+                    <div class="absolute inset-0 bg-gradient-to-tr from-accentCyan to-accentBlue rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"></div>
+                    <div class="hexagon-frame w-[320px] h-[360px] md:w-[360px] md:h-[410px] bg-slate-900 relative p-[3px] overflow-hidden group-hover:rotate-1 transition-transform duration-500">
+                        <div class="hexagon-frame w-full h-full bg-cardBg overflow-hidden relative">
+                            <img src="https://via.placeholder.com/400x450/0a101e/06b6d4?text=Rizwan+Saqib" alt="Muhammad Rizwan Saqib" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter syntax-brightness">
+                            <div class="absolute inset-0 bg-gradient-to-t from-baseBg/80 via-transparent to-transparent opacity-60"></div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="md:col-span-2 space-y-4">
-                <h2 class="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-                    <span class="w-8 h-1 bg-accentCyan inline-block rounded"></span> About Me
-                </h2>
-                <p class="text-slate-300 leading-relaxed">
-                    I am currently a 3rd-semester Bachelor of Science student in <strong>Computer Systems Engineering at IBA Sukkur</strong>. As a dedicated <strong>National Talent Hunt Program (NTHP) Scholar</strong>, I maintain a laser focus on crafting high-quality software architecture and expanding my dynamic programming capabilities.
-                </p>
-                <p class="text-slate-300 leading-relaxed">
-                    While my academic field bridges hardware and systems engineering, my core passion lies deep within full-stack application logic, Object-Oriented methodologies, and implementing highly optimized data structures to solve complex algorithmic issues.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="py-20 bg-slate-900/40">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold tracking-tight text-white mb-12 text-center">
-                Technical Expertise
-            </h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition-all group">
-                    <div class="text-accentCyan text-2xl mb-4 group-hover:scale-110 transition-transform duration-200"><i class="fa-solid fa-terminal"></i></div>
-                    <h3 class="text-lg font-semibold mb-3 text-white">Languages</h3>
-                    <ul class="text-sm text-slate-400 space-y-2">
-                        <li class="flex justify-between"><span>Java (Advanced)</span> <span class="text-cyan-400">90%</span></li>
-                        <li class="flex justify-between"><span>C++ (Intermediate)</span> <span class="text-blue-400">75%</span></li>
-                        <li class="flex justify-between"><span>Arduino / Embedded</span> <span class="text-slate-500">65%</span></li>
-                    </ul>
-                </div>
-                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition-all group">
-                    <div class="text-accentCyan text-2xl mb-4 group-hover:scale-110 transition-transform duration-200"><i class="fa-solid fa-sitemap"></i></div>
-                    <h3 class="text-lg font-semibold mb-3 text-white">Computer Science</h3>
-                    <ul class="text-sm text-slate-400 space-y-1.5">
-                        <li>Data Structures & Algorithms</li>
-                        <li>OOP Architecture</li>
-                        <li>Linked Lists & Linear Maps</li>
-                        <li>Stack & Queue Systems</li>
-                        <li>Exception & File Handling</li>
-                    </ul>
-                </div>
-                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition-all group">
-                    <div class="text-accentCyan text-2xl mb-4 group-hover:scale-110 transition-transform duration-200"><i class="fa-solid fa-cubes"></i></div>
-                    <h3 class="text-lg font-semibold mb-3 text-white">Software Dev</h3>
-                    <ul class="text-sm text-slate-400 space-y-1.5">
-                        <li>Java Swing GUI</li>
-                        <li>Debugging & Refactoring</li>
-                        <li>Basic Software Design</li>
-                        <li>Academic System Architecture</li>
-                    </ul>
-                </div>
-                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition-all group">
-                    <div class="text-accentCyan text-2xl mb-4 group-hover:scale-110 transition-transform duration-200"><i class="fa-solid fa-users"></i></div>
-                    <h3 class="text-lg font-semibold mb-3 text-white">Leadership</h3>
-                    <ul class="text-sm text-slate-400 space-y-1.5">
-                        <li>Microsoft Ambassador Activity</li>
-                        <li>Event Strategy & Management</li>
-                        <li>Cross-functional Collaboration</li>
-                        <li>Public Speaking</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Featured Engineering Projects</h2>
-        <p class="text-slate-400 mb-12">Click on any project card to deep dive into system implementations, reports, and code metrics.</p>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div onclick="openModal('modal-set-op')" class="bg-cardBg rounded-xl border border-slate-800 hover:border-slate-700 transition-all cursor-pointer overflow-hidden flex flex-col group justify-between">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Completed</span>
-                        <span class="text-xs text-slate-500 font-mono">C++</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white group-hover:text-accentCyan transition-colors mb-2">Set Operations System</h3>
-                    <p class="text-slate-400 text-sm line-clamp-3">A dedicated program designed to model complex mathematical set functionalities like Union, Intersection, Difference, and Membership checks directly in native standard C++ pipelines.</p>
-                </div>
-                <div class="px-6 pb-6 pt-2 flex items-center text-xs text-cyan-400 font-semibold gap-1">
-                    Read Details & Links <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </div>
-
-            <div onclick="openModal('modal-robot')" class="bg-cardBg rounded-xl border border-slate-800 hover:border-slate-700 transition-all cursor-pointer overflow-hidden flex flex-col group justify-between">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Completed</span>
-                        <span class="text-xs text-slate-500 font-mono">Arduino</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white group-hover:text-accentCyan transition-colors mb-2">Object Avoiding Robot</h3>
-                    <p class="text-slate-400 text-sm line-clamp-3">An autonomous, hardware-integrated robotic vehicle tracking obstacle spatial distances via ultrasonic ping sensors to compute reactive directional logic in real time.</p>
-                </div>
-                <div class="px-6 pb-6 pt-2 flex items-center text-xs text-cyan-400 font-semibold gap-1">
-                    Read Details & Links <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </div>
-
-            <div onclick="openModal('modal-campus')" class="bg-cardBg rounded-xl border border-slate-800 hover:border-slate-700 transition-all cursor-pointer overflow-hidden flex flex-col group justify-between">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Major Academic Project</span>
-                        <span class="text-xs text-slate-500 font-mono">Java / Swing</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white group-hover:text-accentCyan transition-colors mb-2">Smart Campus System</h3>
-                    <p class="text-slate-400 text-sm line-clamp-3">A multi-role administrative desktop system utilizing persistent internal local file structures and interactive Java Swing interfaces to track complaints and operations.</p>
-                </div>
-                <div class="px-6 pb-6 pt-2 flex items-center text-xs text-cyan-400 font-semibold gap-1">
-                    Read Details & Links <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </div>
-
-            <div onclick="openModal('modal-atm')" class="bg-cardBg rounded-xl border border-slate-800 hover:border-slate-700 transition-all cursor-pointer overflow-hidden flex flex-col group justify-between">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Completed</span>
-                        <span class="text-xs text-slate-500 font-mono">Java Console</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white group-hover:text-accentCyan transition-colors mb-2">ATM Management System</h3>
-                    <p class="text-slate-400 text-sm line-clamp-3">Console banking application implementing encapsulation patterns to securely handle structural accounting records and safe data mutations.</p>
-                </div>
-                <div class="px-6 pb-6 pt-2 flex items-center text-xs text-cyan-400 font-semibold gap-1">
-                    Read Details & Links <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </div>
-
-            <div onclick="openModal('modal-dsa')" class="bg-cardBg rounded-xl border border-slate-800 hover:border-slate-700 transition-all cursor-pointer overflow-hidden flex flex-col group justify-between">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Ongoing Tracking</span>
-                        <span class="text-xs text-slate-500 font-mono">Java Repo</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white group-hover:text-accentCyan transition-colors mb-2">Custom DSA Library</h3>
-                    <p class="text-slate-400 text-sm line-clamp-3">A core centralized repository detailing robust implementations of custom Stack environments and explicit Linked List variations with defensive handling models.</p>
-                </div>
-                <div class="px-6 pb-6 pt-2 flex items-center text-xs text-cyan-400 font-semibold gap-1">
-                    Read Details & Links <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </div>
-
-            <div class="bg-slate-900/50 rounded-xl border border-dashed border-slate-800 p-6 flex flex-col justify-center items-center text-center group min-h-[200px]">
-                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-500 mb-3 group-hover:text-accentCyan group-hover:border-cyan-500/30 border border-transparent transition-all">
-                    <i class="fa-solid fa-lock"></i>
-                </div>
-                <h3 class="text-sm font-semibold text-slate-400 mb-1">Set Operation System (Java Edition)</h3>
-                <p class="text-xs text-slate-600 max-w-[200px]">Plus an unannounced core internal innovation. Brewing quietly... 🔒</p>
-            </div>
-
+    <section id="skills" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900/60">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">My Technical <span class="text-accentCyan">Arsenal</span></h2>
+            <p class="text-textGray mt-3 text-sm md:text-base">A compilation of core computing languages, execution runtimes, and engineering frameworks I use daily.</p>
         </div>
-    </section>
-
-    <div id="modal-set-op" class="fixed inset-0 z-50 overflow-y-auto hidden bg-black/80 flex items-center justify-center p-4">
-        <div class="bg-cardBg border border-slate-800 rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 relative">
-            <button onclick="closeModal('modal-set-op')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="text-2xl font-bold text-white mb-2">Set Operations System (C++)</h3>
-            <p class="text-xs font-mono text-cyan-400 mb-4">Status: Completed | Core Stack: C++ Standard Library</p>
-            <div class="text-sm text-slate-300 space-y-4">
-                <p class="bg-slate-900 p-4 border-l-2 border-cyan-400 rounded-r text-slate-400">"As part of my programming practice, I implemented a Set Operation System using C++. This project helped me strengthen my understanding of arrays, loops, and logical operations."</p>
-                <h4 class="font-semibold text-white mt-4">Implemented Core Elements:</h4>
-                <ul class="list-disc list-inside space-y-1 text-slate-400">
-                    <li>Union & Intersection Computing</li>
-                    <li>Mathematical Set Differences</li>
-                    <li>Set Complement Evaluation</li>
-                    <li>Strict Membership checks & Automated element deduplication</li>
-                </ul>
-            </div>
-            <div class="mt-8 flex flex-wrap gap-4 border-t border-slate-800 pt-4">
-                <a href="https://github.com/Rizwan-Saqib/Set_Operation_sysytem" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-semibold rounded flex items-center gap-2"><i class="fa-brands fa-github text-sm"></i> GitHub Source Code</a>
-                <a href="https://lnkd.in/djb3gPkCI" target="_blank" class="px-4 py-2 bg-red-950/40 text-red-400 border border-red-900/40 hover:bg-red-900/20 text-xs font-semibold rounded flex items-center gap-2"><i class="fa-brands fa-youtube text-sm"></i> Watch Explanation Vlog</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-robot" class="fixed inset-0 z-50 overflow-y-auto hidden bg-black/80 flex items-center justify-center p-4">
-        <div class="bg-cardBg border border-slate-800 rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 relative">
-            <button onclick="closeModal('modal-robot')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="text-2xl font-bold text-white mb-2">Object Avoiding Autonomous Robot</h3>
-            <p class="text-xs font-mono text-cyan-400 mb-4">Status: Completed | Partners: Rizwan Saqib & Abdul Ahad Qureshi</p>
-            <div class="text-sm text-slate-300 space-y-4">
-                <p class="bg-slate-900 p-4 border-l-2 border-cyan-400 rounded-r text-slate-400">"Built using Arduino hardware and a precision ultrasonic array, this autonomous unit reads telemetry data to instantly alter directions and successfully mitigate structural path collisions."</p>
-                <h4 class="font-semibold text-white">Value Proposition:</h4>
-                <ul class="list-disc list-inside space-y-1 text-slate-400">
-                    <li>Real-time sensor distance scanning loops</li>
-                    <li>Integrated embedded system motor control mappings</li>
-                    <li>Academic project developed under guidance of Engr. Muhammad Irfan Younas Mughal</li>
-                </ul>
-            </div>
-            <div class="mt-8 flex flex-wrap gap-4 border-t border-slate-800 pt-4">
-                <a href="https://github.com/Rizwan-Saqib/Object-Avoiding-Robot" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-semibold rounded flex items-center gap-2"><i class="fa-brands fa-github text-sm"></i> GitHub Hardware Code</a>
-                <a href="https://lnkd.in/eMpE2RBU" target="_blank" class="px-4 py-2 bg-blue-950/40 text-blue-400 border border-blue-900/40 hover:bg-blue-900/20 text-xs font-semibold rounded flex items-center gap-2"><i class="fa-solid fa-file-pdf text-sm"></i> Download IEEE Project Report</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-campus" class="fixed inset-0 z-50 overflow-y-auto hidden bg-black/80 flex items-center justify-center p-4">
-        <div class="bg-cardBg border border-slate-800 rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 relative">
-            <button onclick="closeModal('modal-campus')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="text-2xl font-bold text-white mb-2">Smart Campus Management System</h3>
-            <p class="text-xs font-mono text-cyan-400 mb-4">Status: Ongoing Major Project | Core Stack: Java, Java Swing GUI</p>
-            <div class="text-sm text-slate-300 space-y-3">
-                <p>Designed to optimize internal student communication and complaint flows across university departments. Includes discrete role dashboards for admin reviewers and student submitters.</p>
-                <h4 class="font-semibold text-white pt-2">Engineering Elements:</h4>
-                <p class="text-slate-400 text-xs">Utilizes native storage models and clean structural architecture blocks inside Swing frameworks to secure data integrity across multi-tiered authentication windows.</p>
-            </div>
-            <div class="mt-8 border-t border-slate-800 pt-4 text-xs text-slate-500 italic">
-                Repository setting initialized. Live link incoming post evaluation benchmarks.
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-atm" class="fixed inset-0 z-50 overflow-y-auto hidden bg-black/80 flex items-center justify-center p-4">
-        <div class="bg-cardBg border border-slate-800 rounded-xl max-w-2xl w-full p-6 relative">
-            <button onclick="closeModal('modal-atm')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="text-2xl font-bold text-white mb-2">ATM Management System</h3>
-            <p class="text-xs font-mono text-cyan-400 mb-4">Status: Completed | Stack: Console Java</p>
-            <div class="text-sm text-slate-300 space-y-2">
-                <p>An implementation built to test encapsulation boundaries. Features standard ledger mutations, verification controls, and localized exception catching layers to avoid system memory crashes during data entry.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-dsa" class="fixed inset-0 z-50 overflow-y-auto hidden bg-black/80 flex items-center justify-center p-4">
-        <div class="bg-cardBg border border-slate-800 rounded-xl max-w-2xl w-full p-6 relative">
-            <button onclick="closeModal('modal-dsa')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="text-2xl font-bold text-white mb-2">Custom Data Structures Library</h3>
-            <p class="text-xs font-mono text-cyan-400 mb-4">Status: Active Development Tracking | Stack: Java</p>
-            <div class="text-sm text-slate-300 space-y-3">
-                <p>A personal workspace highlighting programmatic structure control. Avoids heavy reliance on built-in language packaging to explicitly map execution steps manually.</p>
-                <ul class="list-disc list-inside text-slate-400 text-xs space-y-1">
-                    <li>Singly, Doubly, and Circular Linked Lists</li>
-                    <li>Dynamic memory allocations and defensive custom exceptions</li>
-                    <li>Optimized Stack & Queue workflows</li>
-                </ul>
-            </div>
-            <div class="mt-6 border-t border-slate-800 pt-4">
-                <a href="https://github.com/Rizwan-Saqib/DSA-JAVA" target="_blank" class="inline-flex px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-semibold rounded items-center gap-2"><i class="fa-brands fa-github text-sm"></i> Explore Code Repository</a>
-            </div>
-        </div>
-    </div>
-
-
-    <section id="experience" class="py-20 bg-slate-900/40">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold tracking-tight text-white mb-12 text-center">Competitive Milestones</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                
-                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 flex gap-4">
-                    <div class="text-accentCyan text-2xl mt-1"><i class="fa-solid fa-trophy"></i></div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white">IBA Sukkur Hackathon Arena</h3>
-                        <p class="text-xs text-slate-500 mb-2">Participant (#1 & #2 Implementation Cycles)</p>
-                        <p class="text-sm text-slate-400">Collaborated in rapid development environments to solve business-centric fintech telemetry concerns and architectural product challenges under crunch timelines.</p>
-                    </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-cardBg p-6 rounded-2xl border border-slate-900/80 neon-glow transition-all duration-300 flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-accentCyan mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-terminal text-xl"></i>
                 </div>
-
-                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 flex gap-4">
-                    <div class="text-accentCyan text-2xl mt-1"><i class="fa-solid fa-award"></i></div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white">MUET Inter-University Hackathon</h3>
-                        <p class="text-xs text-slate-500 mb-2">Team Delegate | Verification Certificate Available</p>
-                        <p class="text-sm text-slate-400">Represented core engineering clusters at university levels to pitch integrated technical solutions and build optimized application models.</p>
-                    </div>
+                <h3 class="font-bold text-white text-base">C++ Programming</h3>
+                <span class="text-xs text-textGray mt-1">Algorithms & Data Systems</span>
+            </div>
+            <div class="bg-cardBg p-6 rounded-2xl border border-slate-900/80 neon-glow transition-all duration-300 flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-accentBlue mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-java text-xl"></i>
                 </div>
-
-                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 flex gap-4 md:col-span-2 max-w-2xl mx-auto w-full">
-                    <div class="text-accentCyan text-2xl mt-1"><i class="fa-solid fa-robot"></i></div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white">RoboCompX Hardware Showcase</h3>
-                        <p class="text-xs text-slate-500 mb-2">Robotics Track | Winner / Credential Earner</p>
-                        <p class="text-sm text-slate-400">Deployed embedded physical systems to map localized path tracks. Tested mechanical sensory capabilities against live functional performance matrices.</p>
-                    </div>
+                <h3 class="font-bold text-white text-base">Java Core</h3>
+                <span class="text-xs text-textGray mt-1">OOP Architecture & Logic</span>
+            </div>
+            <div class="bg-cardBg p-6 rounded-2xl border border-slate-900/80 neon-glow transition-all duration-300 flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-accentPurple mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-python text-xl"></i>
                 </div>
-
+                <h3 class="font-bold text-white text-base">Python</h3>
+                <span class="text-xs text-textGray mt-1">Automation Scripts & Scrapers</span>
+            </div>
+            <div class="bg-cardBg p-6 rounded-2xl border border-slate-900/80 neon-glow transition-all duration-300 flex flex-col items-center text-center group">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-accentGreen mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-microchip text-xl"></i>
+                </div>
+                <h3 class="font-bold text-white text-base">Embedded C / Arduino</h3>
+                <span class="text-xs text-textGray mt-1">Hardware Telemetry Loops</span>
             </div>
         </div>
     </section>
 
-    <section id="leadership" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold tracking-tight text-white mb-12 text-center">Leadership & Community Impact</h2>
-        
+    <section id="projects" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900/60">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Featured Engineering <span class="text-accentCyan">Projects</span></h2>
+            <p class="text-textGray mt-3 text-sm md:text-base">Selected academic deployments, programmatic prototypes, and hackathon modules built by me.</p>
+        </div>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-cardBg rounded-xl p-6 border border-slate-800 relative overflow-hidden text-center flex flex-col justify-between">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
-                <div>
-                    <div class="w-12 h-12 rounded-full bg-cyan-950/50 text-cyan-400 mx-auto flex items-center justify-center text-xl mb-4"><i class="fa-brands fa-microsoft"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Microsoft Program Contributor</h3>
-                    <p class="text-xs text-cyan-400 font-mono mb-4">Active Advocate status</p>
-                    <p class="text-sm text-slate-400">Driving ecosystem engagement, tech content propagation, and registering local developers into foundational computational pipelines.</p>
+            <div class="bg-cardBg rounded-2xl border border-slate-900 overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300">
+                <div class="h-48 bg-slate-900/50 flex items-center justify-center relative border-b border-slate-900">
+                    <i class="fa-solid fa-wallet text-5xl text-accentCyan/30 group-hover:scale-110 transition-transform duration-300"></i>
+                    <div class="absolute top-4 right-4 bg-cyan-500/10 text-accentCyan text-xs px-2.5 py-1 rounded-md font-semibold border border-cyan-500/20">Fintech Theme</div>
                 </div>
-                <div class="mt-4 pt-4 border-t border-slate-800/60 text-xs text-slate-500">
-                    Generated 100+ Preferred Organic Check-ins
-                </div>
-            </div>
-
-            <div class="bg-cardBg rounded-xl p-6 border border-slate-800 relative overflow-hidden text-center flex flex-col justify-between">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-                <div>
-                    <div class="w-12 h-12 rounded-full bg-blue-950/50 text-blue-400 mx-auto flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-building-columns"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Event Director</h3>
-                    <p class="text-xs text-blue-400 font-mono mb-4">Engineering Society</p>
-                    <p class="text-sm text-slate-400">Directing deployment targets for major competitive sympsoiums, managing multi-tier logistics pipelines, and guiding execution teams.</p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-slate-800/60 text-xs text-slate-500">
-                    IBA Sukkur Operational Core
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold text-white group-hover:text-accentCyan transition-colors">Trilogic Sibathon App</h3>
+                    <p class="text-textGray text-sm mt-3 flex-1 leading-relaxed">
+                        An advanced digital banking prototype developed for a fintech hackathon. Features an automated digital "committee" system optimized for peer financial tracking and pool distribution.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="text-[11px] font-medium bg-slate-900 px-2.5 py-1 rounded text-textGray">Java</span>
+                        <span class="text-[11px] font-medium bg-slate-900 px-2.5 py-1 rounded text-textGray">Data Integrity</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-cardBg rounded-xl p-6 border border-slate-800 relative overflow-hidden text-center flex flex-col justify-between">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-cyan-500"></div>
-                <div>
-                    <div class="w-12 h-12 rounded-full bg-purple-950/50 text-purple-400 mx-auto flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Area Head</h3>
-                    <p class="text-xs text-purple-400 font-mono mb-4">Sindh Educational Org (LAO)</p>
-                    <p class="text-sm text-slate-400">Guiding critical baseline learning initiatives to bridge regional developmental resource discrepancies and scale community engagement modules.</p>
+            <div class="bg-cardBg rounded-2xl border border-slate-900 overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300">
+                <div class="h-48 bg-slate-900/50 flex items-center justify-center relative border-b border-slate-900">
+                    <i class="fa-solid fa-robot text-5xl text-accentPurple/30 group-hover:scale-110 transition-transform duration-300"></i>
+                    <div class="absolute top-4 right-4 bg-purple-500/10 text-accentPurple text-xs px-2.5 py-1 rounded-md font-semibold border border-purple-500/20">Embedded Hardware</div>
                 </div>
-                <div class="mt-4 pt-4 border-t border-slate-800/60 text-xs text-slate-500">
-                    Regional Strategic Operations
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold text-white group-hover:text-accentCyan transition-colors">Object-Avoiding Robot</h3>
+                    <p class="text-textGray text-sm mt-3 flex-1 leading-relaxed">
+                        An Arduino-based autonomous locomotion vehicular platform. Uses concurrent ultrasonic sensor telemetry cycles to mitigate frontal dynamic blockages on runtime pathways.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="text-[11px] font-medium bg-slate-900 px-2.5 py-1 rounded text-textGray">Arduino C</span>
+                        <span class="text-[11px] font-medium bg-slate-900 px-2.5 py-1 rounded text-textGray">Sensors Integration</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-cardBg rounded-2xl border border-slate-900 overflow-hidden flex flex-col group hover:-translate-y-1 transition-all duration-300">
+                <div class="h-48 bg-slate-900/50 flex items-center justify-center relative border-b border-slate-900">
+                    <i class="fa-solid fa-gears text-5xl text-accentGreen/30 group-hover:scale-110 transition-transform duration-300"></i>
+                    <div class="absolute top-4 right-4 bg-emerald-500/10 text-accentGreen text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-500/20">Data Engine</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold text-white group-hover:text-accentCyan transition-colors">DSA-JAVA Core Vault</h3>
+                    <p class="text-textGray text-sm mt-3 flex-1 leading-relaxed">
+                        A persistent execution workspace compiling foundational non-primitive structures. Heavily optimized for search complexities, pointer adjustments, and custom index storage paradigms.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="text-[11px] font-medium bg-slate-900 px-2.5 py-1 rounded text-textGray">Java Architecture</span>
+                        <span class="text-[11px] font-medium bg-slate-900 px-2.5 py-1 rounded text-textGray">Algorithms</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-slate-900/40 border-t border-slate-900">
+    <section id="certificates" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900/60">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Academic Honors & <span class="text-accentCyan">Credentials</span></h2>
+            <p class="text-textGray mt-3 text-sm md:text-base">Validations of program alignments, competitive scholarship standards, and tech track credentials.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-cardBg p-6 rounded-2xl border border-slate-900 flex gap-4 items-start neon-glow transition-all">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-accentCyan shrink-0">
+                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">National Talent Hunt Scholar</h3>
+                    <p class="text-xs text-accentCyan font-medium mt-0.5">IBA Sukkur NTHP Program</p>
+                    <p class="text-textGray text-xs mt-2 leading-relaxed">Fully funded academic scholarship awarded based on stringent national testing standards and exceptional technical merit criteria.</p>
+                </div>
+            </div>
+            <div class="bg-cardBg p-6 rounded-2xl border border-slate-900 flex gap-4 items-start neon-glow transition-all">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-accentBlue shrink-0">
+                    <i class="fa-solid fa-laptop-code text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">Microsoft Learn Student Ambassador Path</h3>
+                    <p class="text-xs text-accentBlue font-medium mt-0.5">Cloud Alignment Program</p>
+                    <p class="text-textGray text-xs mt-2 leading-relaxed">Active deployment track with Azure for Students integration ecosystem to run peer cloud learning initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900/60">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">What I Do / <span class="text-accentCyan">Expertise</span></h2>
+            <p class="text-textGray mt-3 text-sm md:text-base">Core engineering operations and software delivery methodologies I specialize in.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-cardBg p-8 rounded-2xl border-l-4 border-accentGreen shadow-xl group hover:-translate-y-1 transition-all duration-300">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accentGreen/20 to-accentCyan/10 flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
+                    <i class="fa-solid fa-code text-2xl text-accentGreen"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Core Java Architecture</h3>
+                <p class="text-xs text-textGray leading-relaxed mb-6">Structuring modular business logic models using object lifecycle patterns, explicit exception traps, and persistent computational IO operations.</p>
+                <ul class="text-xs text-textGray space-y-2.5 mb-8">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentGreen"></i> Advanced OOP Modularity</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentGreen"></i> Dynamic Vector & Data Mapping</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentGreen"></i> Resilient Error Validation Blocks</li>
+                </ul>
+                <a href="#projects" class="w-full py-2.5 bg-gradient-to-r from-accentGreen to-accentCyan text-white text-xs font-semibold rounded-lg text-center inline-block hover:opacity-90 transition-all">Get Started</a>
+            </div>
+
+            <div class="bg-cardBg p-8 rounded-2xl border-l-4 border-accentPurple shadow-xl group hover:-translate-y-1 transition-all duration-300">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accentPurple/20 to-accentBlue/10 flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
+                    <i class="fa-solid fa-sitemap text-2xl text-accentPurple"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">System Engineering (C++)</h3>
+                <p class="text-xs text-textGray leading-relaxed mb-6">Writing high-speed computational threads, managing internal numeric data structures, and handling complex algorithmic flows with low latency overheads.</p>
+                <ul class="text-xs text-textGray space-y-2.5 mb-8">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentPurple"></i> Low-Level Memory Traversal</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentPurple"></i> Algorithmic Complexity Optimization</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentPurple"></i> Numeric Vector Sets Management</li>
+                </ul>
+                <a href="#projects" class="w-full py-2.5 bg-gradient-to-r from-accentPurple to-accentBlue text-white text-xs font-semibold rounded-lg text-center inline-block hover:opacity-90 transition-all">Get Started</a>
+            </div>
+
+            <div class="bg-cardBg p-8 rounded-2xl border-l-4 border-accentCyan shadow-xl group hover:-translate-y-1 transition-all duration-300">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accentCyan/20 to-accentBlue/10 flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
+                    <i class="fa-solid fa-microchip text-2xl text-accentCyan"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Embedded Automation</h3>
+                <p class="text-xs text-textGray leading-relaxed mb-6">Designing automated physical logic arrays on microcontroller loops. Merging dynamic radar/IR sensory registers with linear runtime code.</p>
+                <ul class="text-xs text-textGray space-y-2.5 mb-8">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentCyan"></i> Telemetry Capture Controls</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentCyan"></i> Dynamic Feedback Actuation Loops</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[10px] text-accentCyan"></i> Low Memory Firmware Stacks</li>
+                </ul>
+                <a href="#projects" class="w-full py-2.5 bg-gradient-to-r from-accentCyan to-accentBlue text-white text-xs font-semibold rounded-lg text-center inline-block hover:opacity-90 transition-all">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-cardBg/40 border-t border-slate-900/60">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Let's Build Something Meaningful</h2>
-            <p class="text-slate-400 mb-12 max-w-xl mx-auto">Open for technical collaboration, software architecture benchmarks, or open-source infrastructure alignment.</p>
+            <h2 class="text-3xl font-extrabold tracking-tight text-white mb-2">Get In <span class="text-accentCyan relative inline-block">Touch <div class="absolute bottom-0 left-0 w-full h-[3px] bg-accentCyan/40 rounded-full"></div></span></h2>
+            <p class="text-textGray mb-12 text-sm max-w-xl mx-auto pt-2">Drop an architecture query, integration pitch, or professional development alignment message below.</p>
             
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm font-medium">
-                <a href="mailto:rizwansaqib461@gmail.com" class="p-4 bg-cardBg border border-slate-800 rounded-lg hover:border-cyan-500/40 transition-colors flex flex-col items-center gap-2">
-                    <i class="fa-solid fa-envelope text-accentCyan text-lg"></i>
-                    <span class="text-slate-400 text-xs font-normal">Email Directly</span>
-                    <span class="text-white text-xs break-all">rizwansaqib461@gmail.com</span>
-                </a>
-                <a href="tel:+923053241461" class="p-4 bg-cardBg border border-slate-800 rounded-lg hover:border-cyan-500/40 transition-colors flex flex-col items-center gap-2">
-                    <i class="fa-solid fa-phone text-accentCyan text-lg"></i>
-                    <span class="text-slate-400 text-xs font-normal">Call / Contact</span>
-                    <span class="text-white text-xs">+92 305 3241461</span>
-                </a>
-                <a href="https://www.linkedin.com/in/rizwan-saqib-b723a8370" target="_blank" class="p-4 bg-cardBg border border-slate-800 rounded-lg hover:border-cyan-500/40 transition-colors flex flex-col items-center gap-2 sm:col-span-2 md:col-span-1">
-                    <i class="fa-brands fa-linkedin text-accentCyan text-lg"></i>
-                    <span class="text-slate-400 text-xs font-normal">Professional Network</span>
-                    <span class="text-white text-xs">LinkedIn Profile</span>
-                </a>
-            </div>
+            <form class="space-y-5 text-left max-w-2xl mx-auto bg-baseBg p-8 md:p-10 rounded-2xl border border-slate-900 shadow-2xl">
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <input type="text" placeholder="Your Name" class="p-4 bg-cardBg/30 border border-slate-900 rounded-xl text-sm text-white placeholder:text-slate-600 focus:border-accentCyan/40 focus:ring-1 focus:ring-accentCyan/20 outline-none transition-all">
+                    <input type="email" placeholder="Your Email" class="p-4 bg-cardBg/30 border border-slate-900 rounded-xl text-sm text-white placeholder:text-slate-600 focus:border-accentCyan/40 focus:ring-1 focus:ring-accentCyan/20 outline-none transition-all">
+                </div>
+                <textarea placeholder="Your Message" rows="5" class="w-full p-4 bg-cardBg/30 border border-slate-900 rounded-xl text-sm text-white placeholder:text-slate-600 focus:border-accentCyan/40 focus:ring-1 focus:ring-accentCyan/20 outline-none transition-all"></textarea>
+                
+                <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-accentCyan to-accentBlue text-white font-bold text-sm rounded-xl hover:opacity-95 transition-all shadow-lg shadow-cyan-500/10 flex items-center justify-center gap-3 group">
+                    <i class="fa-solid fa-paper-plane text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i> Send Message
+                </button>
+            </form>
         </div>
     </section>
 
-    <footer class="py-8 text-center text-xs text-slate-600 border-t border-slate-900">
-        <p>&copy; 2026 Muhammad Rizwan Saqib. Made with efficiency using Tailwind CSS.</p>
+    <footer class="py-12 text-center text-xs text-slate-600 border-t border-slate-900/60 max-w-7xl mx-auto px-4">
+        <p>&copy; 2026 Muhammad Rizwan Saqib. All Rights Reserved. Engineered with clean web optimization layout.</p>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on click link
-        const navLinks = mobileMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        document.addEventListener('DOMContentLoaded', () => {
+            new Typed('#typing-element', {
+                strings: [
+                    'Computer Systems Engineer|', 
+                    'Software Architecture Analyst|', 
+                    'Embedded Systems Developer|', 
+                    'NTHP Scholar @ IBA Sukkur|'
+                ],
+                typeSpeed: 50,
+                backSpeed: 25,
+                backDelay: 1800,
+                loop: true,
+                showCursor: false
             });
         });
-
-        // Modal Functionality
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if(modal) {
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Block background scroll
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if(modal) {
-                modal.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scroll
-            }
-        }
-
-        // Close modal if user clicks outside of the main card box container
-        window.onclick = function(event) {
-            if (event.target.classList.contains('fixed')) {
-                event.target.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        }
     </script>
 </body>
 </html>
