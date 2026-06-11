@@ -26,10 +26,6 @@
                         neonPurple: '#9d4edd',
                         cyberGreen: '#39ff14',
                         slateText: '#9ca3af'
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'glow-line': 'glow 3s linear infinite',
                     }
                 }
             }
@@ -38,87 +34,77 @@
     <style>
         body { background-color: #030712; }
         .glass-card {
-            background: rgba(11, 19, 41, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(11, 19, 41, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .glass-card:hover {
-            border-color: rgba(0, 245, 255, 0.3);
-            box-shadow: 0 0 40px rgba(0, 245, 255, 0.08);
-            transform: translateY(-6px);
+            border-color: rgba(0, 245, 255, 0.25);
+            box-shadow: 0 0 50px rgba(0, 245, 255, 0.06);
+            transform: translateY(-8px);
         }
-        .text-glow-cyan { text-shadow: 0 0 15px rgba(0, 245, 255, 0.6); }
-        .canvas-container { position: fixed; top: 0; left: 0; w: 100%; h: 100%; z-index: 0; pointer-events: none; }
+        .text-glow-cyan { text-shadow: 0 0 15px rgba(0, 245, 255, 0.5); }
     </style>
 </head>
 <body class="text-white font-sans overflow-x-hidden selection:bg-neonCyan/20 selection:text-neonCyan">
 
-    <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-40"></canvas>
+    <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30"></canvas>
 
     <nav class="fixed top-0 left-0 w-full z-50 bg-voidBlack/70 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <a href="#" class="font-mono text-xl font-bold tracking-widest text-white group">
+            <a href="#" class="font-mono text-lg font-bold tracking-widest text-white">
                 <span class="text-neonCyan">&lt;</span> RIZWAN <span class="text-neonPurple">.DEV /&gt;</span>
             </a>
-            <div class="hidden lg:flex items-center space-x-10 font-mono text-xs tracking-wider text-slateText">
+            <div class="hidden xl:flex items-center space-x-8 font-mono text-xs tracking-wider text-slateText">
                 <a href="#about" class="hover:text-neonCyan transition-colors">// root</a>
-                <a href="#education" class="hover:text-neonCyan transition-colors">// academics</a>
-                <a href="#skills" class="hover:text-neonCyan transition-colors">// stack</a>
+                <a href="#academics" class="hover:text-neonCyan transition-colors">// academics</a>
+                <a href="#skills" class="hover:text-neonCyan transition-colors">// matrix</a>
                 <a href="#projects" class="hover:text-neonCyan transition-colors">// repositories</a>
-                <a href="#hackathons" class="hover:text-neonCyan transition-colors">// sprints</a>
-                <a href="#leadership" class="hover:text-neonCyan transition-colors">// operational_keys</a>
+                <a href="#leadership" class="hover:text-neonCyan transition-colors">// leadership_nodes</a>
                 <a href="#contact" class="hover:text-neonCyan transition-colors">// comms</a>
             </div>
-            <a href="#contact" class="font-mono text-xs px-5 py-3 border border-neonPurple text-neonPurple rounded-lg hover:bg-neonPurple/10 hover:text-white hover:shadow-[0_0_20px_rgba(157,78,221,0.3)] transition-all">
-                Initialize Connection
+            <a href="#contact" class="font-mono text-xs px-5 py-3 border border-neonPurple text-neonPurple rounded-lg hover:bg-neonPurple/10 hover:text-white hover:shadow-[0_0_25px_rgba(157,78,221,0.3)] transition-all">
+                Establish Session
             </a>
         </div>
     </nav>
 
-    <section id="about" class="relative pt-48 pb-32 max-w-7xl mx-auto px-6 z-10">
+    <section id="about" class="relative pt-44 pb-24 max-w-7xl mx-auto px-6 z-10">
         <div class="grid lg:grid-cols-12 gap-16 items-center">
             <div class="lg:col-span-7 space-y-8">
                 <div class="inline-flex items-center gap-3 px-4 py-2 rounded-md bg-white/5 border border-white/10 font-mono text-xs tracking-widest text-neonCyan">
-                    <span class="w-2 h-2 rounded-full bg-cyberGreen animate-ping"></span> SYSTEM_STATUS: ONLINE
+                    <span class="w-2 h-2 rounded-full bg-cyberGreen animate-ping"></span> SYSTEM_CORE: ACTIVE_RUN
                 </div>
-                <h1 class="text-6xl sm:text-7xl font-extrabold tracking-tighter leading-none text-white">
+                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tighter leading-none text-white">
                     Muhammad Rizwan Saqib
                 </h1>
-                <div class="font-mono text-xl md:text-2xl text-slateText flex items-center gap-2">
+                <div class="font-mono text-lg md:text-xl text-slateText flex items-center gap-2">
                     <span class="text-neonPurple">&gt;_</span> <span id="typing-engine"></span>
                 </div>
-                <p class="text-slateText max-w-2xl text-lg md:text-xl leading-relaxed font-light">
-                    Computer Systems Engineering student at <span class="text-white font-medium">IBA Sukkur</span> and an <span class="text-white font-medium">NTHP Scholar</span>. Specialized in building strict object-oriented logic, dynamic database-less microstructures, and fluid embedded system protocols.
+                <p class="text-slateText max-w-2xl text-base md:text-lg leading-relaxed font-light">
+                    Computer Systems Engineering student at <span class="text-white font-medium">Sukkur IBA University</span> working under the prestigious <span class="text-white font-medium">National Talent Hunt Program (NTHP)</span> scholarship. Specialized in raw multi-pointer algorithmic sequencing, lightweight custom database-less structures, and fluid automated system frameworks.
                 </p>
                 
-                <div class="flex space-x-6 pt-2">
-                    <a href="https://github.com/Rizwan-Saqib" target="_blank" class="w-12 h-12 rounded-xl border border-white/10 bg-matrixDark/40 flex items-center justify-center text-slateText hover:text-neonCyan hover:border-neonCyan hover:-translate-y-1 transition-all">
-                        <i class="fa-brands fa-github text-xl"></i>
+                <div class="flex space-x-5 pt-2">
+                    <a href="https://github.com/Rizwan-Saqib" target="_blank" class="w-12 h-12 rounded-xl border border-white/5 bg-matrixDark/30 flex items-center justify-center text-slateText hover:text-neonCyan hover:border-neonCyan/40 hover:-translate-y-1 transition-all">
+                        <i class="fa-brands fa-github text-lg"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/rizwan-saqib-b723a8370" target="_blank" class="w-12 h-12 rounded-xl border border-white/10 bg-matrixDark/40 flex items-center justify-center text-slateText hover:text-neonCyan hover:border-neonCyan hover:-translate-y-1 transition-all">
-                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    <a href="https://www.linkedin.com/in/rizwan-saqib-b723a8370" target="_blank" class="w-12 h-12 rounded-xl border border-white/5 bg-matrixDark/30 flex items-center justify-center text-slateText hover:text-neonCyan hover:border-neonCyan/40 hover:-translate-y-1 transition-all">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
                     </a>
-                    <a href="mailto:rizwansaqib461@gmail.com" class="w-12 h-12 rounded-xl border border-white/10 bg-matrixDark/40 flex items-center justify-center text-slateText hover:text-neonCyan hover:border-neonCyan hover:-translate-y-1 transition-all">
-                        <i class="fa-solid fa-envelope text-lg"></i>
-                    </a>
-                </div>
-                <div class="flex flex-wrap gap-5 pt-4">
-                    <a href="#projects" class="font-mono text-sm px-8 py-4 bg-neonCyan text-voidBlack font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,245,255,0.4)] transition-all transform hover:-translate-y-0.5">
-                        Compile Repositories
-                    </a>
-                    <a href="#contact" class="font-mono text-sm px-8 py-4 border border-white/10 bg-white/5 text-white font-bold rounded-xl hover:bg-white/10 transition-all transform hover:-translate-y-0.5">
-                        Establish Comms
+                    <a href="mailto:rizwansaqib461@gmail.com" class="w-12 h-12 rounded-xl border border-white/5 bg-matrixDark/30 flex items-center justify-center text-slateText hover:text-neonCyan hover:border-neonCyan/40 hover:-translate-y-1 transition-all">
+                        <i class="fa-solid fa-envelope text-base"></i>
                     </a>
                 </div>
             </div>
             
             <div class="lg:col-span-5 flex justify-center lg:justify-end">
                 <div class="relative group">
-                    <div class="absolute -inset-1.5 bg-gradient-to-r from-neonCyan to-neonPurple rounded-2xl opacity-30 blur-2xl group-hover:opacity-50 transition duration-1000"></div>
-                    <div class="w-[340px] h-[400px] md:w-[380px] md:h-[440px] bg-matrixDark rounded-2xl relative p-1 overflow-hidden border border-white/10">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-neonCyan to-neonPurple rounded-2xl opacity-20 blur-2xl group-hover:opacity-40 transition duration-1000"></div>
+                    <div class="w-[320px] h-[380px] md:w-[360px] md:h-[420px] bg-matrixDark rounded-2xl p-1 border border-white/10 relative">
                         <div class="w-full h-full bg-voidBlack rounded-xl overflow-hidden relative">
-                            <img src="rizwan.jpg" alt="Muhammad Rizwan Saqib" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
+                            <img src="rizwan.jpg" alt="Muhammad Rizwan Saqib" class="w-full h-full object-cover grayscale contrast-115 group-hover:grayscale-0 transition-all duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-voidBlack via-transparent to-transparent opacity-80"></div>
                         </div>
                     </div>
@@ -127,174 +113,244 @@
         </div>
     </section>
 
-    <section id="education" class="py-24 max-w-7xl mx-auto px-6 border-t border-white/5 relative z-10">
-        <div class="grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-4 space-y-2">
-                <h2 class="font-mono text-xs tracking-widest text-neonPurple uppercase">// Institutional_Roadmap</h2>
-                <p class="text-4xl font-extrabold tracking-tight text-white">Academic Deployment</p>
+    <section id="academics" class="py-20 max-w-7xl mx-auto px-6 border-t border-white/5 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-4 space-y-3">
+                <h2 class="font-mono text-xs tracking-widest text-neonPurple uppercase">// SECURE_INFRASTRUCTURE</h2>
+                <p class="text-3xl font-bold tracking-tight text-white">Academic Deployments</p>
+                <p class="text-sm text-slateText leading-relaxed font-light pr-4">Tracing computational parameters, logical systems development, and high-performance pipeline structures across active university registries.</p>
             </div>
-            <div class="md:col-span-8">
-                <div class="glass-card p-8 md:p-10 rounded-2xl relative overflow-hidden shadow-2xl">
-                    <div class="absolute top-0 right-0 w-48 h-48 bg-neonPurple/5 rounded-full blur-3xl"></div>
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+            <div class="lg:col-span-8 space-y-6">
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-neonCyan/5 rounded-full blur-2xl"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
                         <div>
-                            <span class="font-mono text-xs font-bold text-neonCyan bg-neonCyan/10 border border-neonCyan/20 px-3 py-1 rounded">BATCH_CSE_UNDERGRAD</span>
-                            <h3 class="text-2xl font-bold text-white mt-4">BS Computer Systems Engineering</h3>
-                            <p class="text-base text-slateText mt-1">Sukkur IBA University (SIBAU)</p>
+                            <span class="font-mono text-[10px] font-bold text-neonCyan bg-neonCyan/10 border border-neonCyan/20 px-2.5 py-1 rounded">INSTITUTIONAL_CORE</span>
+                            <h3 class="text-xl font-bold text-white mt-3">Sukkur IBA University (SIBAU)</h3>
+                            <p class="text-sm text-slateText mt-1">BS Computer Systems Engineering // Systems Track</p>
+                            <p class="text-xs text-slateText/70 mt-3 font-mono">&gt; Engineering deep logic matrices, data communications, and low-level optimization protocols.</p>
                         </div>
-                        <div class="sm:text-right shrink-0">
-                            <span class="font-mono text-xs font-bold block text-cyberGreen bg-cyberGreen/5 px-4 py-2 rounded border border-cyberGreen/10">Semester_03 // Active</span>
-                            <span class="text-xs font-mono text-slateText block mt-2">NTHP Scholar Tracking</span>
+                        <span class="font-mono text-xs font-bold text-cyberGreen bg-cyberGreen/5 border border-cyberGreen/10 px-3 py-1.5 rounded shrink-0">Semester_03 // ACTIVE</span>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-neonPurple/5 rounded-full blur-2xl"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+                        <div>
+                            <span class="font-mono text-[10px] font-bold text-neonPurple bg-neonPurple/10 border border-neonPurple/20 px-2.5 py-1 rounded">HONORS_REGISTRY</span>
+                            <h3 class="text-xl font-bold text-white mt-3">National Talent Hunt Program (NTHP)</h3>
+                            <p class="text-sm text-slateText mt-1">Fully Funded National Scholarship Awardee</p>
+                            <p class="text-xs text-slateText/70 mt-3 font-mono">&gt; Secured through ultra-competitive national selection parameters; monitored for high academic performance tracks.</p>
                         </div>
+                        <span class="font-mono text-xs font-bold text-neonPurple bg-neonPurple/5 border border-neonPurple/10 px-3 py-1.5 rounded shrink-0">SCHOLAR_VALIDATED</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-24 max-w-7xl mx-auto px-6 border-t border-white/5 relative z-10">
-        <div class="max-w-3xl mb-16">
-            <h2 class="font-mono text-xs tracking-widest text-neonCyan uppercase">// Core_Capabilities</h2>
-            <p class="text-4xl font-extrabold tracking-tight text-white mt-2">Technical Matrix</p>
+    <section id="skills" class="py-20 max-w-7xl mx-auto px-6 border-t border-white/5 relative z-10">
+        <div class="max-w-3xl mb-12">
+            <h2 class="font-mono text-xs tracking-widest text-neonCyan uppercase">// CAPABILITY_INDEX</h2>
+            <p class="text-3xl font-bold tracking-tight text-white mt-1">Technical Compilations</p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl">
-                <h3 class="font-mono text-sm text-neonCyan mb-6 border-b border-white/5 pb-3">&gt; Syntaxes & Engines</h3>
-                <div class="space-y-5">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-xl space-y-6">
+                <h3 class="font-mono text-xs text-neonCyan border-b border-white/5 pb-2 uppercase">&gt; Processing_Languages</h3>
+                <div class="space-y-4">
                     <div>
-                        <div class="flex justify-between font-mono text-xs mb-1.5"><span class="text-slateText">Java SE Architecture</span><span class="text-neonCyan">90%</span></div>
-                        <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden"><div class="bg-neonCyan h-full w-[90%] shadow-[0_0_10px_#00f5ff]"></div></div>
+                        <div class="flex justify-between font-mono text-[11px] mb-1"><span class="text-slateText">Java SE Architecture</span><span class="text-neonCyan">90%</span></div>
+                        <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden"><div class="bg-neonCyan h-full w-[90%] shadow-[0_0_10px_#00f5ff]"></div></div>
                     </div>
                     <div>
-                        <div class="flex justify-between font-mono text-xs mb-1.5"><span class="text-slateText">C++ Logical Units</span><span class="text-neonPurple">65%</span></div>
-                        <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden"><div class="bg-neonPurple h-full w-[65%]"></div></div>
+                        <div class="flex justify-between font-mono text-[11px] mb-1"><span class="text-slateText">C++ Logical Units</span><span class="text-neonPurple">65%</span></div>
+                        <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden"><div class="bg-neonPurple h-full w-[65%]"></div></div>
                     </div>
                     <div>
-                        <div class="flex justify-between font-mono text-xs mb-1.5"><span class="text-slateText">Arduino Microcontrollers</span><span class="text-cyberGreen">55%</span></div>
-                        <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden"><div class="bg-cyberGreen h-full w-[55%]"></div></div>
+                        <div class="flex justify-between font-mono text-[11px] mb-1"><span class="text-slateText">Arduino Firmware Logics</span><span class="text-cyberGreen">55%</span></div>
+                        <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden"><div class="bg-cyberGreen h-full w-[55%]"></div></div>
                     </div>
                 </div>
             </div>
-            <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <h3 class="font-mono text-sm text-neonPurple mb-6 border-b border-white/5 pb-3">&gt; Algorithmic_Structures</h3>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Multi-Variant Linked Lists</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Custom Stack Traces</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Linear Queues</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Recursion Flow Layouts</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Data Structures (DSA)</span>
-                    </div>
+            <div class="glass-card p-6 rounded-xl space-y-4">
+                <h3 class="font-mono text-xs text-neonPurple border-b border-white/5 pb-2 uppercase">&gt; Algorithmic_Structures</h3>
+                <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Multi-Variant Linked Lists</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Custom Pointer Stacks</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Linear & Circular Queues</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Encapsulation Paradigms</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Polymorphic Core Interfaces</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Raw Data Structuring</span>
                 </div>
             </div>
-            <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <h3 class="font-mono text-sm text-cyberGreen mb-6 border-b border-white/5 pb-3">&gt; Systems & Productivity</h3>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Java Swing UI Platforms</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Safe Exception Interceptors</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Raw File I/O Mapping</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Copilot & Microsoft AI Tools</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded border border-white/10 text-slateText">Autonomous Research Agents</span>
-                    </div>
+            <div class="glass-card p-6 rounded-xl space-y-4">
+                <h3 class="font-mono text-xs text-cyberGreen border-b border-white/5 pb-2 uppercase">&gt; Workstations_&_Tools</h3>
+                <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Git Distribution Cores</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">GitHub Repositories</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">VS Code Terminal</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">NetBeans IDE Console</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Java Swing GUI Kits</span>
+                    <span class="px-2 py-1 bg-white/5 rounded text-slateText border border-white/5">Safe File Stream Handlers</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 max-w-7xl mx-auto px-6 border-t border-white/5 relative z-10">
-        <div class="max-w-3xl mb-16">
-            <h2 class="font-mono text-xs tracking-widest text-neonPurple uppercase">// Executable_Modules</h2>
-            <p class="text-4xl font-extrabold tracking-tight text-white mt-2">Production Logs</p>
+    <section id="projects" class="py-20 max-w-7xl mx-auto px-6 border-t border-white/5 relative z-10">
+        <div class="max-w-3xl mb-12">
+            <h2 class="font-mono text-xs tracking-widest text-neonPurple uppercase">// PRODUCTION_LOGS</h2>
+            <p class="text-3xl font-bold tracking-tight text-white mt-1">Compiled Repositories</p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-8">
-                <div class="space-y-5">
+            <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
+                <div class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="font-mono text-[10px] uppercase tracking-widest text-neonCyan bg-neonCyan/5 border border-neonCyan/10 px-2.5 py-1 rounded">BUILD: STEADY</span>
-                        <a href="https://github.com/Rizwan-Saqib/portfolio" target="_blank" class="text-slateText hover:text-neonCyan transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                        <span class="font-mono text-[9px] text-neonCyan bg-neonCyan/5 border border-neonCyan/10 px-2 py-0.5 rounded">MODULE::CAMPUS_CORE</span>
+                        <span class="font-mono text-[10px] text-slateText">Java SE</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-white tracking-tight">Smart Campus System</h3>
-                    <p class="text-slateText text-sm leading-relaxed font-light">Advanced administrative platform using Java Swing UI. Deploys database-less system tracking via automated role separation and persistent sequential file streaming configurations.</p>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Smart Campus System</h3>
+                    <p class="text-slateText text-xs leading-relaxed font-light">Advanced administrative platform using Java Swing UI. Deploys database-less system tracking via automated role separation and persistent sequential file streaming configurations.</p>
                 </div>
-                <div class="flex flex-wrap gap-2 mt-8 font-mono text-[11px] text-slateText">
-                    <span class="bg-white/5 px-2.5 py-1 rounded">Java SE</span>
-                    <span class="bg-white/5 px-2.5 py-1 rounded">Swing GUI</span>
-                    <span class="bg-white/5 px-2.5 py-1 rounded">File I/O</span>
+                <div class="flex flex-wrap gap-1 mt-6 font-mono text-[10px] text-slateText">
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Swing GUI</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">File Handling</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">System Flow</span>
                 </div>
             </div>
 
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-8">
-                <div class="space-y-5">
+            <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
+                <div class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="font-mono text-[10px] uppercase tracking-widest text-cyberGreen bg-cyberGreen/5 border border-cyberGreen/10 px-2.5 py-1 rounded">BUILD: DEPLOYED</span>
-                        <a href="https://github.com/Rizwan-Saqib/portfolio" target="_blank" class="text-slateText hover:text-neonCyan transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                        <span class="font-mono text-[9px] text-cyberGreen bg-cyberGreen/5 border border-cyberGreen/10 px-2 py-0.5 rounded">MODULE::LOW_LEVEL</span>
+                        <span class="font-mono text-[10px] text-slateText">Java Native</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-white tracking-tight">Obstacle Avoiding Robot</h3>
-                    <p class="text-slateText text-sm leading-relaxed font-light">Autonomous embedded instrumentation loop. Syncs processing logic with ultrasonic data inputs to build immediate dynamic hardware path safety routing vectors.</p>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Custom DSA Engine</h3>
+                    <p class="text-slateText text-xs leading-relaxed font-light">A low-level custom abstract structure architecture compiling manual Stacks and variant Linked Lists. Built completely from structural pointers without standard utility classes.</p>
                 </div>
-                <div class="flex flex-wrap gap-2 mt-8 font-mono text-[11px] text-slateText">
-                    <span class="bg-white/5 px-2.5 py-1 rounded">Arduino Core</span>
-                    <span class="bg-white/5 px-2.5 py-1 rounded">Firmware</span>
-                    <span class="bg-white/5 px-2.5 py-1 rounded">Sensors</span>
+                <div class="flex flex-wrap gap-1 mt-6 font-mono text-[10px] text-slateText">
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Node Pointers</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Data Structures</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Exceptions</span>
                 </div>
             </div>
 
-            <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between p-8">
-                <div class="space-y-5">
+            <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
+                <div class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="font-mono text-[10px] uppercase tracking-widest text-neonPurple bg-neonPurple/5 border border-neonPurple/10 px-2.5 py-1 rounded">BUILD: STABLE</span>
-                        <a href="https://github.com/Rizwan-Saqib/portfolio" target="_blank" class="text-slateText hover:text-neonCyan transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                        <span class="font-mono text-[9px] text-neonPurple bg-neonPurple/5 border border-neonPurple/10 px-2 py-0.5 rounded">MODULE::EMBEDDED_LOOP</span>
+                        <span class="font-mono text-[10px] text-slateText">Arduino / C++</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-white tracking-tight">Custom DSA Engine</h3>
-                    <p class="text-slateText text-sm leading-relaxed font-light">A low-level custom abstract structure architecture compiling manual Stacks and variant Linked Lists. Built completely from structural pointers without standard utility classes.</p>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Obstacle Avoiding Robot</h3>
+                    <p class="text-slateText text-xs leading-relaxed font-light">Autonomous embedded instrumentation loop. Syncs processing logic with ultrasonic data inputs to build immediate dynamic hardware path safety routing vectors.</p>
                 </div>
-                <div class="flex flex-wrap gap-2 mt-8 font-mono text-[11px] text-slateText">
-                    <span class="bg-white/5 px-2.5 py-1 rounded">Java Native</span>
-                    <span class="bg-white/5 px-2.5 py-1 rounded">Data Structures</span>
+                <div class="flex flex-wrap gap-1 mt-6 font-mono text-[10px] text-slateText">
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Firmware</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Ultrasonic Radar</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Motors</span>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono text-[9px] text-neonCyan bg-neonCyan/5 border border-neonCyan/10 px-2 py-0.5 rounded">MODULE::FINTECH_SPRINT</span>
+                        <span class="font-mono text-[10px] text-slateText">Java Architecture</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Trilogic Fintech Tracker</h3>
+                    <p class="text-slateText text-xs leading-relaxed font-light">Specialized micro-ledger processing layout developed for hackathon evaluation. Solves localized saving distributions and collaborative automated committee setups.</p>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-6 font-mono text-[10px] text-slateText">
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Fintech Core</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Hackathon Build</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Ledgers</span>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono text-[9px] text-cyberGreen bg-cyberGreen/5 border border-cyberGreen/10 px-2 py-0.5 rounded">MODULE::MATH_ENGINE</span>
+                        <span class="font-mono text-[10px] text-slateText">C++ Runtime</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Set Operation System</h3>
+                    <p class="text-slateText text-xs leading-relaxed font-light">A high-speed mathematical analysis utility built to evaluate discrete logic matrices (unions, intersections, subsets) via custom array tracing routines.</p>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-6 font-mono text-[10px] text-slateText">
+                    <span class="bg-white/5 px-2 py-0.5 rounded">C++ Arrays</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Discrete Logic</span>
+                    <span class="bg-white/5 px-2 py-0.5 rounded">Optimized</span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section id="contact" class="py-24 border-t border-white/5 relative z-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-12">
-                <div class="lg:col-span-5 space-y-6">
-                    <h2 class="text-4xl font-extrabold tracking-tight text-white">Initialize Comms<span class="text-neonCyan animate-pulse">_</span></h2>
-                    <p class="text-slateText text-base leading-relaxed max-w-sm">Open up terminal sessions, query parameters, or push operational infrastructure pitches.</p>
-                    <div class="space-y-4 pt-4 font-mono text-xs">
-                        <div class="flex items-center gap-4"><div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-neonCyan"><i class="fa-solid fa-envelope"></i></div><a href="mailto:rizwansaqib461@gmail.com" class="text-white hover:text-neonCyan">rizwansaqib461@gmail.com</a></div>
-                        <div class="flex items-center gap-4"><div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-neonCyan"><i class="fa-solid fa-phone"></i></div><a href="tel:+923053241461" class="text-white hover:text-neonCyan">+92 305 3241461</a></div>
-                    </div>
+    <section id="leadership" class="py-20 max-w-7xl mx-auto px-6 border-t border-white/5 relative z-10">
+        <div class="max-w-3xl mb-12">
+            <h2 class="font-mono text-xs tracking-widest text-neonCyan uppercase">// IMPACT_CORES</h2>
+            <p class="text-3xl font-bold tracking-tight text-white mt-1">Operational Leadership Nodes</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-card p-6 rounded-xl space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-neonCyan/10 border border-neonCyan/20 flex items-center justify-center text-neonCyan"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="text-lg font-bold text-white">Microsoft Learn Student Ambassadors</h3>
                 </div>
-                <div class="lg:col-span-7">
-                    <form class="space-y-4 bg-matrixDark/40 p-8 rounded-2xl border border-white/5">
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Identity" class="p-4 bg-voidBlack border border-white/10 rounded-xl text-sm text-white focus:border-neonCyan outline-none font-mono">
-                            <input type="email" placeholder="Network Terminal Email" class="p-4 bg-voidBlack border border-white/10 rounded-xl text-sm text-white focus:border-neonCyan outline-none font-mono">
-                        </div>
-                        <textarea placeholder="Message buffer content..." rows="5" class="w-full p-4 bg-voidBlack border border-white/10 rounded-xl text-sm text-white focus:border-neonCyan outline-none font-mono"></textarea>
-                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-neonCyan to-neonPurple text-voidBlack font-bold text-sm font-mono rounded-xl hover:shadow-lg hover:shadow-neonCyan/20 transition-all flex items-center justify-center gap-2">
-                            EXE_DISPATCH_MESSAGE
-                        </button>
-                    </form>
+                <p class="text-slateText text-xs leading-relaxed font-light">
+                    Engaged within the Microsoft student ecosystem pipelines. Managing community outreach architectures, scaling local resource integration setups, and exploring deep technical cloud parameters.
+                </p>
+                <span class="inline-block font-mono text-[9px] text-neonCyan bg-neonCyan/5 px-2 py-0.5 rounded border border-neonCyan/10">AMBASSADOR_TRACK_NODE</span>
+            </div>
+            
+            <div class="glass-card p-6 rounded-xl space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-neonPurple/10 border border-neonPurple/20 flex items-center justify-center text-neonPurple"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3 class="text-lg font-bold text-white">Sindh Educational Organization (LAO)</h3>
                 </div>
+                <p class="text-slateText text-xs leading-relaxed font-light">
+                    Serving as the designated <span class="text-white font-medium">Area Head</span>. Designing logistics deployment configurations, managing grass-root structural scaling channels, and organizing large-scale regional operational workflows.
+                </p>
+                <span class="inline-block font-mono text-[9px] text-neonPurple bg-neonPurple/5 px-2 py-0.5 rounded border border-neonPurple/10">AREA_HEAD_OPERATIONS</span>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center font-mono text-[10px] text-slateText border-t border-white/5 max-w-7xl mx-auto px-6">
-        <p>&copy; 2026 MUHAMMAD RIZWAN SAQIB // ALL SYSTEM CORES DEPLOYED SUCCESSFULLY.</p>
+    <section id="contact" class="py-20 border-t border-white/5 relative z-10 max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-5 space-y-4">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Initialize Connections<span class="text-neonCyan animate-pulse">_</span></h2>
+                <p class="text-slateText text-sm leading-relaxed font-light">Open secure terminal lines, sync network interfaces, or push operational development proposals.</p>
+                <div class="space-y-3 pt-4 font-mono text-xs">
+                    <div class="flex items-center gap-3"><div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center text-neonCyan"><i class="fa-solid fa-envelope"></i></div><a href="mailto:rizwansaqib461@gmail.com" class="text-slateText hover:text-neonCyan transition-colors">rizwansaqib461@gmail.com</a></div>
+                    <div class="flex items-center gap-3"><div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center text-neonCyan"><i class="fa-solid fa-phone"></i></div><a href="tel:+923053241461" class="text-slateText hover:text-neonCyan transition-colors">+92 305 3241461</a></div>
+                </div>
+            </div>
+            <div class="lg:col-span-7">
+                <form class="space-y-4 bg-matrixDark/20 p-6 rounded-xl border border-white/5">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Identity" class="p-3.5 bg-voidBlack border border-white/10 rounded-lg text-xs text-white focus:border-neonCyan outline-none font-mono">
+                        <input type="email" placeholder="Terminal SMTP Email" class="p-3.5 bg-voidBlack border border-white/10 rounded-lg text-xs text-white focus:border-neonCyan outline-none font-mono">
+                    </div>
+                    <textarea placeholder="Message payload stream..." rows="4" class="w-full p-3.5 bg-voidBlack border border-white/10 rounded-lg text-xs text-white focus:border-neonCyan outline-none font-mono"></textarea>
+                    <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-neonCyan to-neonPurple text-voidBlack font-bold text-xs font-mono rounded-lg hover:shadow-lg hover:shadow-neonCyan/10 transition-all">
+                        EXE_DISPATCH_STREAM
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center font-mono text-[9px] text-slateText border-t border-white/5 max-w-7xl mx-auto px-6">
+        <p>&copy; 2026 MUHAMMAD RIZWAN SAQIB // ALL SYSTEM ENGINES DEPLOYED IN COMPLIANCE MODES.</p>
     </footer>
 
     <script>
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let mouse = { x: null, y: null, radius: 150 };
+        let mouse = { x: null, y: null, radius: 130 };
 
         function initCanvas() {
             canvas.width = window.innerWidth;
@@ -309,30 +365,30 @@
         class Particle {
             constructor(x, y) {
                 this.x = x; this.y = y;
-                this.vx = (Math.random() - 0.5) * 0.6;
-                this.vy = (Math.random() - 0.5) * 0.6;
-                this.radius = Math.random() * 1.5 + 1;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 1.2 + 1;
             }
             draw() {
                 ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 245, 255, 0.5)'; ctx.fill();
+                ctx.fillStyle = 'rgba(0, 245, 255, 0.4)'; ctx.fill();
             }
             update() {
                 this.x += this.vx; this.y += this.vy;
                 if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.width) this.vy *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
                 
                 let dx = mouse.x - this.x; let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx*dx + dy*dy);
                 if (distance < mouse.radius) {
-                    this.x -= dx * 0.02; this.y -= dy * 0.02;
+                    this.x -= dx * 0.015; this.y -= dy * 0.015;
                 }
             }
         }
 
         function setupParticles() {
             particles = [];
-            let count = Math.min(Math.floor(canvas.width / 12), 100);
+            let count = Math.min(Math.floor(canvas.width / 14), 80);
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
             }
@@ -343,16 +399,15 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach(p => { p.update(); p.draw(); });
             
-            // Connect lines
             for (let a = 0; a < particles.length; a++) {
                 for (let b = a; b < particles.length; b++) {
                     let dx = particles[a].x - particles[b].x;
                     let dy = particles[a].y - particles[b].y;
                     let dist = Math.sqrt(dx*dx + dy*dy);
-                    if (dist < 100) {
+                    if (dist < 90) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(157, 78, 221, ${0.15 * (1 - dist/100)})`;
-                        ctx.lineWidth = 0.8;
+                        ctx.strokeStyle = `rgba(157, 78, 221, ${0.12 * (1 - dist/90)})`;
+                        ctx.lineWidth = 0.7;
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
                         ctx.stroke();
@@ -366,12 +421,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             new Typed('#typing-engine', {
                 strings: [
-                    'Computer Systems Engineering Core', 
-                    'Advanced Java Architect', 
-                    'Microsoft Tech Ecosystem Contributor', 
-                    'National Talent Hunt Program Scholar'
+                    'Computer Systems Engineering Architecture', 
+                    'Core Java & Algorithmic Logic Compiler', 
+                    'Microsoft Learn Student Ambassador Track', 
+                    'National Talent Hunt Program (NTHP) Scholar'
                 ],
-                typeSpeed: 40, backSpeed: 20, backDelay: 2000, loop: true, showCursor: false
+                typeSpeed: 35, backSpeed: 15, backDelay: 2200, loop: true, showCursor: false
             });
         });
     </script>
